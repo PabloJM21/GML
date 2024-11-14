@@ -12,6 +12,8 @@ else
     echo "No existing virtual environment found."
 fi
 
+
+module avail anaconda
 # Load Python module (use the appropriate version available on the system)
 module load python/3.10.13  # Replace with the available version
 
