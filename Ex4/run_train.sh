@@ -13,7 +13,9 @@
 #SBATCH --error=./slurm_files/slurm-%x-%j.err      # where to write slurm error
 
 module load python/3.10.13
-source activate gml # Or whatever you called your environment.
+# Activate the virtual environment
+source gml_env/bin/activate
+
 
 # Printing out some info.
 echo "Submitting job with sbatch from directory: ${SLURM_SUBMIT_DIR}"
