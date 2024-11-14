@@ -12,7 +12,7 @@
 #SBATCH --output=./slurm_files/slurm-%x-%j.out     # where to write output, %x give job name, %j names job id
 #SBATCH --error=./slurm_files/slurm-%x-%j.err      # where to write slurm error
 
-module load anaconda3
+module load python/3.10.13
 source activate gml # Or whatever you called your environment.
 
 # Printing out some info.
