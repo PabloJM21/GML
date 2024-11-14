@@ -13,17 +13,15 @@ else
 fi
 
 
-module avail anaconda
-# Load Python module (use the appropriate version available on the system)
-module load python/3.10.13  # Replace with the available version
-
+module load anaconda3
 # Create a new virtual environment named gml_env
-python -m venv "$ENV_NAME"
-
+conda create -n "$ENV_NAME" python=3.10 --override-channels -c defaults -y
 # Activate the virtual environment
-source "$ENV_NAME/bin/activate"
+source activate "$ENV_NAME"
+
+
 
 # Install packages
-pip install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=12.1 -c pytorch -c nvidia -y --override-channels -c defaults
+conda install pytorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 pytorch-cuda=12.1 -c pytorch -c nvidia -y --override-channels -c defaults
 
 pip install -r requirements.txt
